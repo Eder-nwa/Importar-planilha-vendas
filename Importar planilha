@@ -1,0 +1,22 @@
+print('------ERP INVENTÁRIOS------')
+print('Seja bem vindo usuário, informe seu nome para iniciarmos.')
+n = input('Nome: ')
+print('Muito bem {}, deseja importar uma planilha?'.format(n))
+print('')
+r = input('Informe 1 para sim e 0 para não: ')
+if r == '1':
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    caminho = input('Informe o caminho do arquivo: ')
+    sheet = pd.read_csv(caminho)
+    c = input('Informe a coluna que deseja importar: ')
+    if '0' < c < '5':
+        print(sheet[c])
+    else:
+        print(sheet)
+elif r == '0':
+    print('Muito obrigado {}, volte sempre.'.format(n))
+else:
+    print('Opção INVÁLIDA!')
+    print('')
+    print('Encerrando o processo...')
